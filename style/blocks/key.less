@@ -4,11 +4,18 @@
   display: grid;
   grid-template-rows: 1fr min-content;
   grid-row-gap: 20px;
+  background-color: #F0F0F0;
+
+}
+@media (min-width: 360px) {
+    .key{
+        padding-bottom: 20px;
+    }
 }
 
 @media (min-width: 768px) {
   .key {
-    padding: 0 20px 0 20px;
+    padding: 0 20px 25px 20px;
     grid-template-rows: min-content;
     grid-template-columns: 1fr 180px;
     grid-column-gap: 2px;
@@ -16,10 +23,10 @@
 }
 
 @media (min-width: 960px) {
-    .key {
-        padding: 23px 0 25px 0;
-        grid-column-gap: 14px;
-    }
+  .key {
+    padding: 23px 0 25px 0;
+    grid-column-gap: 14px;
+  }
 }
 
 //Image
@@ -55,12 +62,13 @@
 }
 
 // Quotes
-
+.quotes {
+  background-color: @basic-grey;
+}
 .key__quotes {
   margin: 0 15px;
   min-width: 330px;
   height: 319px;
-  background-color: @basic-grey;
 }
 
 @media (min-width: 414px) {
@@ -76,17 +84,18 @@
   }
 }
 
-.key__txt {
+.quotes__txt {
   font-family: "Roboto-Regular", sans-serif;
   font-weight: normal;
   font-size: 18px;
   line-height: 21px;
   margin-top: 131px;
-  margin-left:83px;
+  margin-left: 83px;
+
 }
 
 @media (min-width: 768px) {
-  .key__txt {
+  .quotes__txt {
     margin-top: 42px;
     margin-left: 36px;
   }

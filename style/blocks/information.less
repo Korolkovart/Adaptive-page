@@ -1,0 +1,248 @@
+// Information
+
+.information {
+  display: grid;
+  grid-template-rows: min-content min-content min-content min-content;
+  grid-row-gap: 20px;
+  padding-bottom: 20px;
+  background-color: #F0F0F0;
+
+}
+
+@media (min-width: 768px) {
+.information {
+  padding-bottom: 25px;
+  background-color: @basic-white;
+  }
+}
+
+@media (min-width: 960px) {
+  .information {
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 15px;
+    padding-bottom: 60px;
+
+  }
+}
+
+// News (first block)
+
+.news {
+  background-color: @basic-grey;
+  &__title {
+    margin-top: 69px;
+    margin-left: 67px;
+    font-family: "Roboto-Regular";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+  }
+}
+
+.information {
+  &__news {
+    margin: 0 15px;
+    min-width: 330px;
+    min-height: 516px;
+  }
+}
+
+@media (min-width: 414px) {
+  .information {
+    &__news {
+      margin: 0 10px;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .information {
+    &__news {
+      margin: 0 20px;
+      min-width: 728px;
+      min-height: 309px;
+    }
+  }
+}
+
+@media (min-width: 960px) {
+  .information {
+    &__news {
+      margin: 0;
+      min-width: 375px;
+      min-height: 516px;
+    }
+  }
+}
+
+// Info blocks (accordion)
+
+.information {
+  &__tab {
+    margin: 0 15px;
+    min-width: 330px;
+    padding: 11px 12px 10px 18px;
+    background-color: @basic-grey;
+  }
+}
+
+@media (min-width: 414px) {
+  .information {
+    &__tab {
+      margin: 0 10px;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .information {
+    &__tab {
+      margin: 0 20px;
+      background-color: @light-blue;
+      padding: 0 0 42px 0;
+    }
+  }
+}
+@media (min-width: 960px) {
+  .information {
+    &__tab {
+      margin: 0;
+      background-color: @basic-grey;
+      padding: 0;
+      min-width: 180px;
+      min-height: 516px;
+    }
+  }
+}
+
+.tab {
+  &__img {
+    display: none;
+  }
+  &__title {
+    font-family: "Roboto-Bold";
+    font-size: 18px;
+    line-height: 21px;
+    color: @basic-black;
+    cursor: pointer;
+    &_only-960 {
+      display: none;
+    }
+  }
+
+  &__img {
+    width: 180px;
+    height: 120px;
+    background-image: url(../../img/offer-img.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  &__message {
+    display: none;
+
+    &__offer {
+      margin-top: 19px;
+      font-family: "Roboto-Regular";
+      font-style: normal;
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 21px;
+      color: @basic-black;
+    }
+    &__offer + &__offer {
+      display: block;
+      margin-top: 28px;
+      margin-bottom: 0;
+    }
+  }
+  & input {
+    display: none;
+  }
+}
+
+.tab__content :checked ~ .tab__message {
+  display: block;
+  padding-bottom: 13px;
+}
+
+.tab__content :checked ~ .tab__title {
+  color: @active-blue;
+}
+
+@media (min-width: 360px) {
+  .tab {
+    &__img {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .tab {
+    display: flex;
+    // justify-content: center;
+    justify-content: left;
+
+    &__title {
+      color: @active-blue;
+      cursor: auto;
+    }
+    &__img {
+      display: block;
+    }
+    &__message {
+      display: block;
+    }
+    &__content {
+      margin-top: 17px;
+      margin-left: 27px;
+    }
+    &__message {
+      max-width: 490px;
+      &__offer {
+        margin-top: 7px;
+        margin-bottom: 0;
+      }
+      &__offer + &__offer {
+        margin-top: 10px;
+      }
+    }
+  }
+  .tab__content :checked ~ .tab__message {
+    padding-bottom: 0;
+  }
+}
+@media (min-width: 960px) {
+  .tab {
+    &__title {
+      color: @basic-black;
+      display: none;
+      &_only-960 {
+        display: block;
+        margin-top: 53px;
+        font-family: 'Roboto-Regular';
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 21px;
+      }
+    }
+    &__img {
+      display: none;
+    }
+    &__content {
+      margin: 0;
+    }
+    &__message {
+      display: none;
+    }
+  }
+  .tab__content :checked ~ .tab__title {
+    color: @basic-black;
+  }
+  .tab__content :checked ~ .tab__message {
+    display: none;
+  }
+}
