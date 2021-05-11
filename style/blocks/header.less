@@ -37,24 +37,31 @@
 
 // Logo
 
-.logo__link {
-  display: block;
-  width: 70px;
-  height: 42px;
+.logo {
+  &__link {
+    display: block;
+    width: 70px;
+    height: 42px;
+    &_link-img {
+      height: 100%;
+      width: 100%;
+    }
+  }
 }
-.logo__link-img {
-    height: 100%;
-  width: 100%;
-}
+
 @media (min-width: 768px) {
-.logo__link {
-    width: 105px;
-    height: 63px;
+  .logo {
+    &__link {
+      width: 105px;
+      height: 63px;
+    }
   }
 }
 @media (min-width: 960px) {
-  .header__logo {
-    padding-left: 40px;
+  .header {
+    &__logo {
+      padding-left: 40px;
+    }
   }
 }
 
@@ -64,28 +71,37 @@
   background-color: @basic-blue;
 }
 
-.header__menu {
-  width: 42px;
-  height: 42px;
+.header {
+  &__menu {
+    width: 42px;
+    height: 42px;
+  }
 }
 
-.menu__button {
-  margin: 0;
-  padding: 0;
-  width: 42px;
-  height: 42px;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
+.menu {
+  &__button {
+    margin: 0;
+    padding: 0;
+    width: 42px;
+    height: 42px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
 }
 
 @media (min-width: 960px) {
-  .header__menu {
-    width: 100%;
-    height: 39px;
+  .header {
+    &__menu {
+      width: 100%;
+      height: 39px;
+    }
   }
-  .menu__button {
-    width: 100%;
-    height: 39px;
+
+  .menu {
+    &__button {
+      width: 100%;
+      height: 39px;
+    }
   }
 }
